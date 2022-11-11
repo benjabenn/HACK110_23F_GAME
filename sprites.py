@@ -1,17 +1,12 @@
-import pygame
 import math
 import random
-from pygame.locals import (
-    RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
+
+import pygame
+from pygame.locals import (K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, KEYDOWN,
+                           QUIT, RLEACCEL)
+
 from constants import *
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self) -> None:

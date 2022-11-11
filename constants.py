@@ -1,7 +1,7 @@
 """File for keeping all global constants."""
 
-SCREEN_WIDTH = 1760
-SCREEN_HEIGHT = 990
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 TICK_RATE = 144
 
 NUM_OF_ENEMIES = 40

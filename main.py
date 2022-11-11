@@ -1,20 +1,14 @@
 """PyGame project for Hack110 Advanced Topics in Games Workshop."""
 
 # Import statements
-import pygame
 import random
+
+import pygame
+from pygame.locals import (K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, KEYDOWN,
+                           QUIT, RLEACCEL)
+
 from constants import *
 from sprites import *
-from pygame.locals import (
-    RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
 
 # Initialize pygame
 pygame.init()
