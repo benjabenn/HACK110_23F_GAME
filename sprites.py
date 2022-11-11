@@ -20,7 +20,7 @@ class Player(pygame.sprite.Sprite):
         image_path = "assets/UNC_Player.png"
         self.surf = pygame.image.load(image_path).convert()
         # self.surf.set_colorkey((255, 255, 255), RLEACCEL)
-        self.speed = 10
+        self.speed = PLAYER_SPEED
         self.rect = self.surf.get_rect()
 
     def update(self, pressed_keys) -> None:
@@ -53,7 +53,7 @@ class LeftFlyingEnemy(pygame.sprite.Sprite):
         self.surf = pygame.image.load(image_path).convert()
         # self.surf.set_colorkey((255, 255, 255), RLEACCEL)
 
-        spawn_point_right = (random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100), random.randint(0, SCREEN_HEIGHT))
+        spawn_point_right = (random.randint(SCREEN_WIDTH - 400, SCREEN_WIDTH -20), random.randint(0, SCREEN_HEIGHT))
         self.rect = self.surf.get_rect(center = spawn_point_right)
 
         self.speed = random.randint(3, 5)
@@ -72,11 +72,11 @@ class SeekingEnemy(pygame.sprite.Sprite):
         image_path = "assets/Enemy_Player.png"
         self.surf = pygame.image.load(image_path).convert()
 
-        spawn_point_right = (random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100), random.randint(0, SCREEN_HEIGHT))
+        spawn_point_right = (random.randint(SCREEN_WIDTH - 400, SCREEN_WIDTH -20), random.randint(0, SCREEN_HEIGHT))
         self.rect = self.surf.get_rect(center = spawn_point_right)
-        self.speed = 5
+        self.speed = ENEMY_SPEED
 
-    def update(self, player):
+    def update(self, player, enemies):
         direction_x = - (self.rect.x - player.rect.x) 
         direction_y = - (self.rect.y - player.rect.y) 
         distance = math.hypot(direction_x, direction_y)
@@ -84,4 +84,21 @@ class SeekingEnemy(pygame.sprite.Sprite):
         direction_y /= distance
         direction_x *= self.speed
         direction_y *= self.speed
-        self.rect.move_ip(direction_x, direction_y)
+
+        other = pygame.sprite.GroupSingle()
+        other.add(enemies)
+        other.remove(self)
+        if pygame.sprite.spritecollideany(self, other):
+            self.rect.move_ip(-direction_x * 6, -direction_y * 6)
+        else:
+            self.rect.move_ip(direction_x, direction_y)
+
+    def update_collision(self, player, enemies):
+        direction_x = - (self.rect.x - player.rect.x) 
+        direction_y = - (self.rect.y - player.rect.y) 
+        distance = math.hypot(direction_x, direction_y)
+        direction_x /= distance
+        direction_y /= distance
+        direction_x *= self.speed
+        direction_y *= self.speed
+        self.rect.move_ip(-direction_x, -direction_y)

@@ -30,7 +30,7 @@ all_sprites.add(player)
 
 
 ADDENEMY = pygame.USEREVENT + 1
-pygame.time.set_timer(ADDENEMY, 250, 11)
+pygame.time.set_timer(ADDENEMY, TIME_BETWEEN_ENEMIES, NUM_OF_ENEMIES)
 
 clock = pygame.time.Clock()
 
@@ -59,9 +59,18 @@ while running:
     
     # Call the update method on player checking all pressed keys for True/False
     player.update(pressed_keys)
-    
+
+    # for i in enemies:
+    #     other_enemies = pygame.sprite.Group()
+    #     other_enemies.add(enemies)
+    #     other_enemies.remove(i)
+    #     if pygame.sprite.spritecollideany(i, other_enemies):
+    #         i.update_collision(player, enemies)
+    #     else:
+    #         i.update(player, enemies)
+
     # Updates enemy positions
-    enemies.update(player)
+    enemies.update(player, enemies)
 
     # Fill the background with black
     screen.fill((0, 0, 0))
@@ -78,4 +87,4 @@ while running:
     # Update the display
     pygame.display.flip()
 
-    clock.tick(144)
+    clock.tick(TICK_RATE)
