@@ -67,7 +67,7 @@ class SeekingEnemy(pygame.sprite.Sprite):
         image_path = "assets/Enemy_Player.png"
         self.surf = pygame.image.load(image_path).convert()
 
-        spawn_point_right = (random.randint(SCREEN_WIDTH - 400, SCREEN_WIDTH -20), random.randint(0, SCREEN_HEIGHT))
+        spawn_point_right = (random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100), random.randint(0, SCREEN_HEIGHT))
         self.rect = self.surf.get_rect(center = spawn_point_right)
         self.speed = ENEMY_SPEED
 
