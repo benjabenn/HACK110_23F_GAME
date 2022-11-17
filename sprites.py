@@ -103,3 +103,4 @@ class SeekingEnemy(pygame.sprite.Sprite):
         other = pygame.sprite.Group()
         other.add(enemies)
         other.remove(self)
+        return pygame.sprite.spritecollideany(self, other)
