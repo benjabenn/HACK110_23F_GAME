@@ -70,6 +70,7 @@ class SeekingEnemy(pygame.sprite.Sprite):
         spawn_point_right = (random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100), random.randint(0, SCREEN_HEIGHT))
         self.rect = self.surf.get_rect(center = spawn_point_right)
         self.speed = ENEMY_SPEED
+        self.collided = False
 
     def update(self, player, enemies):
         direction_x = - (self.rect.x - player.rect.x) 
@@ -80,13 +81,13 @@ class SeekingEnemy(pygame.sprite.Sprite):
         direction_x *= self.speed
         direction_y *= self.speed
 
-        other = pygame.sprite.GroupSingle()
-        other.add(enemies)
-        other.remove(self)
-        if pygame.sprite.spritecollideany(self, other):
-            self.rect.move_ip(-direction_x * 6, -direction_y * 6)
-        else:
-            self.rect.move_ip(direction_x, direction_y)
+        # other = pygame.sprite.GroupSingle()
+        # other.add(enemies)
+        # other.remove(self)
+        # if pygame.sprite.spritecollideany(self, other):
+        #     self.rect.move_ip(-direction_x * 6, -direction_y * 6)
+        # else:
+        self.rect.move_ip(direction_x, direction_y)
 
     def update_collision(self, player, enemies):
         direction_x = - (self.rect.x - player.rect.x) 
@@ -97,3 +98,8 @@ class SeekingEnemy(pygame.sprite.Sprite):
         direction_x *= self.speed
         direction_y *= self.speed
         self.rect.move_ip(-direction_x, -direction_y)
+
+    def is_collided(self, player, enemies) -> bool:
+        other = pygame.sprite.Group()
+        other.add(enemies)
+        other.remove(self)

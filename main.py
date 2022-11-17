@@ -54,14 +54,14 @@ while running:
     # Call the update method on player checking all pressed keys for True/False
     player.update(pressed_keys)
 
-    # for i in enemies:
-    #     other_enemies = pygame.sprite.Group()
-    #     other_enemies.add(enemies)
-    #     other_enemies.remove(i)
-    #     if pygame.sprite.spritecollideany(i, other_enemies):
-    #         i.update_collision(player, enemies)
-    #     else:
-    #         i.update(player, enemies)
+    for i in enemies:
+        other_enemies = pygame.sprite.Group()
+        other_enemies.add(enemies)
+        other_enemies.remove(i)
+        if pygame.sprite.spritecollideany(i, other_enemies):
+            i.update_collision(player, enemies)
+        else:
+            i.update(player, enemies)
 
     # Updates enemy positions
     enemies.update(player, enemies)
