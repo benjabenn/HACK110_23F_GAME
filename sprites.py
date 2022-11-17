@@ -7,6 +7,10 @@ from pygame.locals import (K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, KEYDOWN,
 
 from constants import *
 
+# from random import randint, random
+
+
+
 
 class Player(pygame.sprite.Sprite):
     def __init__(self) -> None:
@@ -81,25 +85,27 @@ class SeekingEnemy(pygame.sprite.Sprite):
         direction_x *= self.speed
         direction_y *= self.speed
 
-        # other = pygame.sprite.GroupSingle()
-        # other.add(enemies)
-        # other.remove(self)
-        # if pygame.sprite.spritecollideany(self, other):
-        #     self.rect.move_ip(-direction_x * 6, -direction_y * 6)
-        # else:
-        self.rect.move_ip(direction_x, direction_y)
+        CHECK_COLLISIONS = pygame.USEREVENT + 2
+        pygame.time.set_timer(CHECK_COLLISIONS, 1000)
 
-    def update_collision(self, player, enemies):
-        direction_x = - (self.rect.x - player.rect.x) 
-        direction_y = - (self.rect.y - player.rect.y) 
-        distance = math.hypot(direction_x, direction_y)
-        direction_x /= distance
-        direction_y /= distance
-        direction_x *= self.speed
-        direction_y *= self.speed
-        self.rect.move_ip(-direction_x, -direction_y)
+        if self.is_collided(enemies):
+            for event in pygame.event.get():
+                if event.type == CHECK_COLLISIONS:
+                    self.rect.move_ip(-direction_x * 2 * (random.random() - 0.5), -direction_y * 2 * (random.random() - 0.5))
+        else: 
+            self.rect.move_ip(direction_x, direction_y)
 
-    def is_collided(self, player, enemies) -> bool:
+    # def update_collision(self, player, enemies):
+    #     direction_x = - (self.rect.x - player.rect.x) 
+    #     direction_y = - (self.rect.y - player.rect.y) 
+    #     distance = math.hypot(direction_x, direction_y)
+    #     direction_x /= distance
+    #     direction_y /= distance
+    #     direction_x *= self.speed
+    #     direction_y *= self.speed
+    #     self.rect.move_ip(-direction_x, -direction_y)
+
+    def is_collided(self, enemies) -> bool:
         other = pygame.sprite.Group()
         other.add(enemies)
         other.remove(self)
