@@ -27,7 +27,7 @@ class win_zone(pygame.sprite.Sprite):
         surface = pygame.surface.Surface((20, SCREEN_HEIGHT))
         surface.set_colorkey((0, 0, 0))
         self.surf = surface
-        spawn_point = (BACKGROUND_WIDTH - 100, SCREEN_HEIGHT / 2)
+        spawn_point = (BACKGROUND_WIDTH - (BACKGROUND_WIDTH // 12), SCREEN_HEIGHT / 2)
         self.rect = self.surf.get_rect(center = spawn_point)
         self.speed = BACKGROUND_SPEED
         

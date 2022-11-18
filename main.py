@@ -42,7 +42,7 @@ clock = pygame.time.Clock()
 
 # It's as easy as this to add music!
 pygame.mixer.music.load(MUSIC_FILENAME)
-pygame.mixer.music.play(-1, 1)
+pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(1)
 
 
@@ -95,11 +95,16 @@ def main():
         if pygame.sprite.spritecollideany(player, enemies):
             # If so, kill player and end game (end loop)
             player.kill()
+            print("You got tackled!")
             running = False
 
         # Check for collisions with the end zone, if so, win the game!
         if pygame.sprite.spritecollideany(player, win_zone_group):
             print("You won!")
+            pygame.mixer.music.load(WIN_SOUND_FILENAME)
+            pygame.mixer.music.play(1)
+            pygame.mixer.music.set_volume(1)
+            pygame.time.delay(3000)
             running = False
 
         # Update the display
