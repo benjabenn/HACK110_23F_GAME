@@ -45,10 +45,12 @@ def main():
                     running = False
             elif event.type == ADDENEMY:
                 # Create a new enemy
-                # new_enemy = LeftFlyingEnemy()
                 new_enemy = SeekingEnemy()
+                new_enemy2 = LeftFlyingEnemy()
                 enemies.add(new_enemy)
+                enemies.add(new_enemy2)
                 all_sprites.add(new_enemy)
+                all_sprites.add(new_enemy2)
 
         # Initalize a dict storing all pressed keys
         pressed_keys = pygame.key.get_pressed()

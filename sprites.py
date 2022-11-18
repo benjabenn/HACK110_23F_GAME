@@ -52,12 +52,12 @@ class LeftFlyingEnemy(pygame.sprite.Sprite):
         self.surf = pygame.image.load(image_path).convert()
         # self.surf.set_colorkey((255, 255, 255), RLEACCEL)
 
-        spawn_point_right = (random.randint(SCREEN_WIDTH - 400, SCREEN_WIDTH -20), random.randint(0, SCREEN_HEIGHT))
+        spawn_point_right = (random.randint(SCREEN_WIDTH + 20, SCREEN_WIDTH + 100), random.randint(0, SCREEN_HEIGHT))
         self.rect = self.surf.get_rect(center = spawn_point_right)
 
-        self.speed = random.randint(3, 5)
+        self.speed = random.randint(1, 3)
 
-    def update(self):
+    def update(self, player, enemies):
         self.rect.move_ip(-self.speed, 0)
         if self.rect.right < 0:
             self.kill()
@@ -89,9 +89,7 @@ class SeekingEnemy(pygame.sprite.Sprite):
         pygame.time.set_timer(CHECK_COLLISIONS, 1000)
 
         if self.is_collided(enemies):
-            for event in pygame.event.get():
-                if event.type == CHECK_COLLISIONS:
-                    self.rect.move_ip(-direction_x * 2 * (random.random() - 0.5), -direction_y * 2 * (random.random() - 0.5))
+            self.rect.move_ip(-direction_x * 2 * (random.random() - 0.5), -direction_y * 2 * (random.random() - 0.5))
         else: 
             self.rect.move_ip(direction_x, direction_y)
 
