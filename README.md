@@ -13,6 +13,7 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 
 ## Workshop Points of Discussion
 - Gitignore the pycache folder
+- Using a lot of built-in methods and classes (read documentation, tutorials, and google your questions!)
 - Making a player that moves with arrow keys (dict with pressed keys)
 - Making a moving background with a simple surface
 - How to make a win zone (just an invisible long sprite)
@@ -22,7 +23,9 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 - Event queue
 - Collisions
 
-## Asset Credits
+## Credits
+Great tutorial that I followed to better understand rects, surfaces, movement, etc... [PyGame Primer](https://realpython.com/pygame-a-primer/)
+
 Credit to images by [FreePik](https://www.freepik.com/free-vector/american-football-field-top-view_11684074.htm#query=football%20field&position=0&from_view=keyword#position=0&query=football%20field) and [Kenney](www.kenney.nl/assets/sports-pack)
 
 Royalty free music from [FesliyanStudios](https://www.FesliyanStudios.com)
