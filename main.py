@@ -2,13 +2,13 @@
 
 # Import statements
 import pygame
-from pygame.locals import (K_ESCAPE, KEYDOWN, QUIT)
+from pygame.locals import K_ESCAPE, KEYDOWN, QUIT
 
+from background import *
 # Import from our other modules, use * to get everything (usually not a 
 # good idea but since we made the files and we know what's in it it's okay)
 from constants import *
 from sprites import *
-from background import *
 
 # Initialize pygame
 pygame.init()

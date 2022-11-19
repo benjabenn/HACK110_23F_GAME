@@ -2,7 +2,7 @@ import math
 import random
 
 import pygame
-from pygame.locals import (K_DOWN, K_LEFT, K_RIGHT, K_UP, RLEACCEL)
+from pygame.locals import K_DOWN, K_LEFT, K_RIGHT, K_UP, RLEACCEL
 
 from constants import *
 
@@ -74,6 +74,7 @@ class SeekingEnemy(pygame.sprite.Sprite):
     """Enemy that seeks and moves towards the player"""
 
     def __init__(self) -> None:
+
         super(SeekingEnemy, self).__init__()
 
         image_path = ENEMY_FILENAME

@@ -1,5 +1,7 @@
 import pygame
+
 from constants import *
+
 
 class Background():
     """Background surface, not a sprite since we don't need any collision logic."""

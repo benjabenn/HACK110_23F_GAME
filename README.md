@@ -11,6 +11,17 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 - [X] Endzone that can be reached by player to win the game 
 - [ ] Blocking Teammates?
 
+## Workshop Points of Discussion
+- Gitignore the pycache folder
+- Making a player that moves with arrow keys (dict with pressed keys)
+- Making a moving background with a simple surface
+- How to make a win zone (just an invisible long sprite)
+- How to make enemies that fly to the left and then ->
+- How to make enemies that follow the player
+- How to add music (just a few commands!)
+- Event queue
+- Collisions
+
 ## Asset Credits
 Credit to images by [FreePik](https://www.freepik.com/free-vector/american-football-field-top-view_11684074.htm#query=football%20field&position=0&from_view=keyword#position=0&query=football%20field) and [Kenney](www.kenney.nl/assets/sports-pack)
 
