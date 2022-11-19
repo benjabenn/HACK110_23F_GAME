@@ -9,7 +9,7 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 - [X] Collision detection to make enemies press up against each other ~~without overlap~~ and freak out a lil bit
 - [X] Scrolling football field background 
 - [X] Endzone that can be reached by player to win the game 
-- [ ] Blocking Teammates?
+- [ ] ~~Blocking Teammates?~~
 
 ## Workshop Points of Discussion
 - Gitignore the pycache folder
@@ -26,4 +26,5 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 Credit to images by [FreePik](https://www.freepik.com/free-vector/american-football-field-top-view_11684074.htm#query=football%20field&position=0&from_view=keyword#position=0&query=football%20field) and [Kenney](www.kenney.nl/assets/sports-pack)
 
 Royalty free music from [FesliyanStudios](https://www.FesliyanStudios.com)
+
 Sound Effect from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6185)

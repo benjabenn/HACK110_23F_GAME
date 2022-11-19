@@ -59,10 +59,11 @@ def main():
             elif event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     running = False
+            # Create two new enemies every time the ADDENEMY event happens        
             elif event.type == ADDENEMY:
-                # Create two new enemies every time the ADDENEMY event happens
                 new_enemy = SeekingEnemy()
                 new_enemy2 = LeftFlyingEnemy()
+                # Add them to their groups
                 enemies.add(new_enemy)
                 enemies.add(new_enemy2)
                 all_sprites.add(new_enemy)
