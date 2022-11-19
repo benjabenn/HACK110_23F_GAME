@@ -16,9 +16,9 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Nam
 - Using a lot of built-in methods and classes (read documentation, tutorials, and google your questions!)
 - Making a player that moves with arrow keys (dict with pressed keys)
 - Making a moving background with a simple surface
+- How to make enemies that follow the player
 - How to make a win zone (just an invisible long sprite)
 - How to make enemies that fly to the left and then ->
-- How to make enemies that follow the player
 - How to add music (just a few commands!)
 - Event queue
 - Collisions
