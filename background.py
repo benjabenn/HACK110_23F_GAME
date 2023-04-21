@@ -10,8 +10,10 @@ class Background():
         # Initialize the super class
         super(Background, self).__init__()
 
-        # Create the surface that is the football field
+        # Create the surface that is the football field by using the load method of image, then converting it
         surface = pygame.image.load(BACKGROUND_FILENAME).convert()
+        # Scale it to the desired size, I made it the same height as the screen but 3x as long to make a sizeable
+        # football field to scroll across the screen
         self.surf = pygame.transform.scale(surface, (BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
         
         # Set the x and y to start at 0
@@ -50,5 +52,5 @@ class win_zone(pygame.sprite.Sprite):
         self.speed = BACKGROUND_SPEED
         
     def update(self):
-        # Just move it to the left at the speed
+        # Just move it to the left at the speed in the constants file
         self.rect.move_ip(-self.speed, 0)

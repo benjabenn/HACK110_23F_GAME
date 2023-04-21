@@ -23,6 +23,10 @@ player = Player()
 
 # Create groups for them to go into by calling the Group constructor, 
 # using the GroupSingle for the win_zone since there is only one
+# Pygame groups documentation at this link!
+# https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.Group
+# Simple explanation from RealPython (a great resource for lots of pygame stuff!) at this link!
+# https://realpython.com/lessons/sprite-groups/
 enemies = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 win_zone_group = pygame.sprite.GroupSingle()
@@ -35,7 +39,9 @@ win_zone_group.add(win_zone)
 # Create an event! pygame events have numbers, we want to put one 
 # at the end of the list of numbers. After that set a timer to loop the 
 # event, with args for ms between actions and number of loops
-ADDENEMY = pygame.USEREVENT + 1
+# Go here for more information!
+# https://coderslegacy.com/python/pygame-userevents/
+ADDENEMY = pygame.USEREVENT
 pygame.time.set_timer(ADDENEMY, TIME_BETWEEN_ENEMIES, NUM_OF_ENEMIES)
 
 # Set up clock for tickrate in loop

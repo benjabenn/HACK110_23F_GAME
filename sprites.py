@@ -21,6 +21,7 @@ class Player(pygame.sprite.Sprite):
         # Set the speed to the constant
         self.speed = PLAYER_SPEED
 
+        # Get the rect from the surface
         # Spawn in the center, a little from the left
         self.rect = self.surf.get_rect(center = (50, SCREEN_HEIGHT / 2))
 
