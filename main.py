@@ -16,12 +16,13 @@ pygame.init()
 # Setting up the window
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 
-# Create a LOT of sprites and a background surface
+# Create some sprites and a background surface by calling their class constructors
 background = Background()
 win_zone = win_zone()
 player = Player()
 
-# Create groups for them to go into
+# Create groups for them to go into by calling the Group constructor, 
+# using the GroupSingle for the win_zone since there is only one
 enemies = pygame.sprite.Group()
 all_sprites = pygame.sprite.Group()
 win_zone_group = pygame.sprite.GroupSingle()
@@ -109,7 +110,7 @@ def main():
             pygame.time.delay(3000)
             running = False
 
-        # Update the display
+        # Update the display, is the equivalent of update() with no args
         pygame.display.flip()
 
         # Tick at constant frame rate
