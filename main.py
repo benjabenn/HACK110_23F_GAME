@@ -52,7 +52,6 @@ pygame.mixer.music.load(MUSIC_FILENAME)
 pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(1)
 
-
 def main():
     # Set a running bool variable to True, can be set to False at any time to end the game loop
     running = True

@@ -26,6 +26,8 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop!
 ## Credits
 Great tutorial that I followed to better understand rects, surfaces, movement, etc... [PyGame Primer](https://realpython.com/pygame-a-primer/)
 
+Another great guide that I did not follow but is a great resource! [Pygame Tutorial](https://coderslegacy.com/python/python-pygame-tutorial/)
+
 Credit to images by [FreePik](https://www.freepik.com/free-vector/american-football-field-top-view_11684074.htm#query=football%20field&position=0&from_view=keyword#position=0&query=football%20field) and [Kenney](www.kenney.nl/assets/sports-pack)
 
 Royalty free music from [FesliyanStudios](https://www.FesliyanStudios.com)
