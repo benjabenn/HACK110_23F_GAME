@@ -12,6 +12,7 @@ class Background():
 
         # Create the surface that is the football field by using the load method of image, then converting it
         surface = pygame.image.load(BACKGROUND_FILENAME).convert()
+        
         # Scale it to the desired size, I made it the same height as the screen but 3x as long to make a sizeable
         # football field to scroll across the screen
         self.surf = pygame.transform.scale(surface, (BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
