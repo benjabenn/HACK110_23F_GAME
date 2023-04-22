@@ -1,6 +1,6 @@
-# HACK110_22F_GAME
+# HACK110_23S_GAME
 
-This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop! Name is TBD.
+This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop!
 
 ## Game Mechanics and Themes
 - [X] Football players as sprites for player and enemies
