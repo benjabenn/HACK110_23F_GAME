@@ -67,7 +67,10 @@ def main():
             elif event.type == KEYDOWN:
                 if event.key == K_ESCAPE:
                     running = False
-            # Create two new enemies every time the ADDENEMY event happens        
+            # Create two new enemies every time the ADDENEMY event happens
+            # We defined the ADDENEMY event earlier in one of the slots given to us by pygame
+            # The other slots are taken up by built-in events like KEYDOWN, QUIT, etc..
+            # One just flies left, the other seeks the player out       
             elif event.type == ADDENEMY:
                 new_enemy = SeekingEnemy()
                 new_enemy2 = LeftFlyingEnemy()
@@ -77,10 +80,13 @@ def main():
                 all_sprites.add(new_enemy)
                 all_sprites.add(new_enemy2)
 
-        # Initalize a dict storing all pressed keys
+        # Initalize a dict storing all pressed keys by calling the get_pressed() function that gets the state of all
+        # keyboard buttons 
+        # Documentation: https://www.pygame.org/docs/ref/key.html#pygame.key.get_pressed
         pressed_keys = pygame.key.get_pressed()
         
-        # Call the update method on player checking all pressed keys for True/False
+        # Call the update method on player by passing the pressed keys dict and within the 
+        # update method we will check relevant pressed keys for True/False
         player.update(pressed_keys)
 
         # Updates enemy positions
@@ -97,10 +103,15 @@ def main():
         win_zone.update()
 
         # Draw all of the sprites using a for loop
+        # Another quick RealPython article for reference!
+        # https://realpython.com/lessons/using-blit-and-flip/
         for entity in all_sprites:
             screen.blit(entity.surf, entity.rect)
 
         # Check for any collisions between the player and any enemy
+        # Collisions are a difficult topic, the links below can help!
+        # Documentation: https://www.pygame.org/docs/ref/sprite.html#pygame.sprite.spritecollideany
+        # Guide: https://coderslegacy.com/python/pygame-sprite-collision-detection/#:~:text=Sprite%20Collision%20Functions
         if pygame.sprite.spritecollideany(player, enemies):
             # If so, kill player and end game (end loop)
             player.kill()
