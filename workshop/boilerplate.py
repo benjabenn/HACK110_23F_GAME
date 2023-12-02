@@ -4,6 +4,7 @@ import pygame, sys
 size = width, height = 640, 480
 screen = pygame.display.set_mode(size)
 
+# colors!
 LIGHT_BLUE = (51, 153, 255)
 RED = (240, 20, 20)
 
@@ -16,7 +17,10 @@ clock = pygame.time.Clock()
 # set up bool variable for game loop
 running = True
 
+# create a rectangle 5 from the left
 rectangle = pygame.Rect(5, height/2, 50, 50)
+
+pygame.mouse.set_visible(False)
 
 while running:
     # if the player clicks x or hits escape, end game loop
@@ -29,6 +33,8 @@ while running:
 
     # Draw a rectangle
     pygame.draw.rect(screen, RED, rectangle)
+
+    rectangle.centerx, rectangle.centery = pygame.mouse.get_pos()
 
     # Update the display, is the equivalent of update() with no args
     pygame.display.flip()
