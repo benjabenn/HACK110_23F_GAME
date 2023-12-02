@@ -13,7 +13,9 @@ This is a PyGame game made for the Hack110 Advanced Topics in Game Workshop!
 
 ## Workshop Points of Discussion
 - Gitignore the pycache folder
-- Using a lot of built-in methods and classes (read documentation, tutorials, and google your questions!)
+- Using a lot of built-in methods and classes
+    - Read [documentation](https://www.pygame.org/docs/) and tutorials
+    - Google or even ChatGPT your questions!
 - Making a player that moves with arrow keys (dict with pressed keys)
 - Making a moving background with a simple surface
 - How to make enemies that follow the player

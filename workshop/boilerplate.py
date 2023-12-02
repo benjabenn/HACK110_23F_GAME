@@ -40,4 +40,4 @@ while running:
     pygame.display.flip()
 
     # Tick at constant frame rate
-    clock.tick(30)
+    clock.tick(60)
